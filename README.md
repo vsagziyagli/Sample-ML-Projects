@@ -1,2 +1,2 @@
-# Sample-ML-Projects
+# Sample-Machine-Learning-Projects
 Sample ML Projects
