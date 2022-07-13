@@ -6,13 +6,6 @@ def distance(center, point):
     return np.linalg.norm(center - point)
 
 
-def return_list(point, x):
-    list_1 = []
-    for m in point:
-        list_1.append(m[x])
-    return list_1
-
-
 points = np.array([[-12, 12], [11, 3], [16, 9], [1, 14], [9, 0], [-2, -6], [0, -23], [-7, 5], [-10, -5], [-22, -8]])
 
 # points = np.array([[0, 0], [0, 1], [1, 1], [1, 0], [9, 0], [10, 0], [9, 1], [10, 1], [11, 11]])
@@ -44,11 +37,12 @@ while True:
 
         plt.plot(center_1[0], center_1[1], color="red", marker=(5, 1), markersize=12)
         plt.annotate("Center_1", xy=(center_1[0], center_1[1]))
-        plt.plot(return_list(cluster_1, 0), return_list(cluster_1, 1), "ro")
+        plt.scatter(cluster_1[:, 0], cluster_1[:, 1], label="cluster_1", c="red", marker="o")
 
         plt.plot(center_2[0], center_2[1], color="blue", marker=(5, 1), markersize=12)
         plt.annotate("Center_2", xy=(center_2[0], center_2[1]))
-        plt.plot(return_list(cluster_2, 0), return_list(cluster_2, 1), "bo")
+        plt.scatter(cluster_2[:, 0], cluster_2[:, 1], label="cluster_2", c="blue", marker="o")
+        plt.legend(loc='upper right')
         plt.show()
         break
     else:
